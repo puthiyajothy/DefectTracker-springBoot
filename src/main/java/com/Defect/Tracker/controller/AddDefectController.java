@@ -39,19 +39,20 @@ public class AddDefectController {
 			return addDefectService.getAllDefects();
 	}
 	
-	
+	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/getDefect/{id}")
 	public ResponseEntity<AddDefect>getAllDefectById(@PathVariable("id")Long id){
 		return new  ResponseEntity<AddDefect>(addDefectService.findById(id),HttpStatus.OK);
 	}
 	
+	@CrossOrigin("http://localhost:3000")
 	@DeleteMapping("/deleteDefect/{id}")
 	public ResponseEntity<AddDefect>deleteDefect(@PathVariable("id")Long id){
 	addDefectService.deleteDefectById(id);
 	return new ResponseEntity<AddDefect>(HttpStatus.NO_CONTENT);
 	
 }	
-	
+	@CrossOrigin("http://localhost:3000")
 	@PutMapping("/updatedefect")
 	public ResponseEntity<AddDefect>updateDefect(@Valid @RequestBody AddDefect adddefect){
 		addDefectService.updateDefect(adddefect);

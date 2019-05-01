@@ -32,4 +32,15 @@ public class AddDeveloperServiceImp implements AddDeveloperService {
 		return addDeveloperRepository.findBydeveloperId(id);
 	}
 
+	@Override
+	public void deletedeveloperById(long id) {
+		addDeveloperRepository.deleteById(id);
+	}
+
+	@Override
+	public void updatedeveloper(AddDeveloper adddeveloper) {
+	addDeveloperRepository.save(adddeveloper);
+		
+	}
+
 }

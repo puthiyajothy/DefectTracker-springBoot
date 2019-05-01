@@ -5,8 +5,11 @@ import java.util.List;
 import com.Defect.Tracker.entities.AddDeveloper;
 
 
+
 public interface AddDeveloperService {
 	void saveDeveloper(AddDeveloper adddeveloper);
 	List<AddDeveloper>getAlldeveloper();
 	AddDeveloper findBydeveloperId(Long id);
+	void deletedeveloperById(long id);
+	void updatedeveloper(AddDeveloper adddeveloper);
 }
