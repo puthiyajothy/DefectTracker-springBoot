@@ -1,11 +1,10 @@
 package com.Defect.Tracker.entities;
 
-
-
-
+import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 
@@ -28,22 +27,26 @@ public class AddModule {
 	
 	
 	
-	//created relationship  with add_user 
-	
-//	@ManyToOne
-//	@JoinColumn(name="user_id", nullable=false)
-//	private AddUser addUser;
-
-	
-	//created relationship with developer
-	
-	
 	@ManyToOne
 	@JoinColumn(name="developerId", nullable=false)
 	private AddDeveloper adddeveloper;
 	
 	
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	@OneToMany(mappedBy="addModule",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	private List<AddDefect> addDefect;
 	
+	
+	
+	
+	public List<AddDefect> getAddDefect() {
+		return addDefect;
+	}
+
+	public void setAddDefect(List<AddDefect> addDefect) {
+		this.addDefect = addDefect;
+	}
+
 	public AddDeveloper getAdddeveloper() {
 		return adddeveloper;
 	}

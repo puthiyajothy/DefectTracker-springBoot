@@ -51,6 +51,7 @@ public class AddModuleController {
 		
 	}
 	
+	@CrossOrigin("http://localhost:3000")
 	@PutMapping("/updatemodule")
 	public ResponseEntity<AddModule>updateModule(@Valid @RequestBody AddModule addModule){
 		addModuleService.updateModule(addModule);

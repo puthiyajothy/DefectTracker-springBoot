@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Defect.Tracker.entities.AddDeveloper;
-import com.Defect.Tracker.entities.AddProject;
 import com.Defect.Tracker.service.AddDeveloperService;
 
 @RestController

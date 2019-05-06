@@ -39,14 +39,14 @@ public class AddProjectController {
 	public List<AddProject>getAllProjects(){
 		return addProjectService.getAllProjects();
 	}
-	
-	
+
 	@GetMapping("findbyid/{id}")
 	public ResponseEntity<AddProject>getAllProjects(@PathVariable("id")Long id){
 		return new ResponseEntity<AddProject>(addProjectService.FindById(id),HttpStatus.OK);
 
 		
 	}
+	
 	@CrossOrigin("http://localhost:3000")
 	@PutMapping("/updateprojects")
 	public ResponseEntity<AddProject>updateproject(@Valid @RequestBody AddProject addProject){

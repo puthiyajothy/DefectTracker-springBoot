@@ -4,9 +4,9 @@ import javax.persistence.*;
 
 
 
+
 @Entity
 @Table(name="add_defect")
-
 public class AddDefect {
 
 	@Id
@@ -15,8 +15,6 @@ public class AddDefect {
 	@Column(name="defect_id")
 	private Long defectId;
 	
-	@Column(name="module")
-	private String module;
 	
 	@Column(name="description")
 	private String description;
@@ -57,25 +55,23 @@ public class AddDefect {
 	
 	
 	// created relationship with module 
-//	@ManyToOne
+	@ManyToOne
 //	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//	@JoinColumn(name="module_id",nullable=false)
-//	private AddModule addModule;
-//	
+	@JoinColumn(name="module_id",nullable=false)
+	private AddModule addModule;
 	
 	
-	
+
+	public AddModule getAddModule() {
+		return addModule;
+	}
+
+	public void setAddModule(AddModule addModule) {
+		this.addModule = addModule;
+	}
 
 	public Long getDefectId() {
 		return defectId;
-	}
-
-	public String getModule() {
-		return module;
-	}
-
-	public void setModule(String module) {
-		this.module = module;
 	}
 
 	public void setDefectId(Long defectId) {
